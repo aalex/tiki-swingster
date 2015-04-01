@@ -7,17 +7,21 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
+
 @gray-darker:            lighten(#000, 13.5%); // #222
-@gray-dark:              lighten(#000, 20%);   // #333
-@gray:                   lighten(#000, 33.5%); // #555
-@gray-light:             lighten(#000, 60%);   // #999
-@gray-lighter:           lighten(#000, 93.5%); // #eee
+@gray-dark:              #333;
+@gray:                   #555;
+@gray-light:             #999;
+@gray-lighter:           #eee;
+
+// Brand colors
+// -------------------------
 
 @brand-primary:         #428bca;
 @brand-success:         #5cb85c;
-@brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
+@brand-info:            #5bc0de;
 
 
 //== Scaffolding
@@ -25,7 +29,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               #ffffff;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
@@ -39,13 +43,14 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:  Anaheim, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Lora, Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-sans-serif;
+@font-family-monospace:   CutiveMono, Menlo, Monaco, Consolas, "Courier New", monospace;
+@aa-font-family-script:  RougeScript; // , @font-family-serif;
+@font-family-base:        @font-family-serif;
 
-@font-size-base:          14px;
+@font-size-base:          16px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
@@ -62,7 +67,7 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    inherit;
+@headings-font-family:    @aa-font-family-script; // inherit
 @headings-font-weight:    500;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
@@ -84,14 +89,14 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-base-vertical:     6px;
-@padding-base-horizontal:   12px;
+@padding-base-vertical:     3px;
+@padding-base-horizontal:   6px;
 
-@padding-large-vertical:    10px;
-@padding-large-horizontal:  16px;
+@padding-large-vertical:    5px;
+@padding-large-horizontal:  8px;
 
-@padding-small-vertical:    5px;
-@padding-small-horizontal:  10px;
+@padding-small-vertical:    3px;
+@padding-small-horizontal:  5px;
 
 @padding-xs-vertical:       1px;
 @padding-xs-horizontal:     5px;
@@ -99,9 +104,9 @@
 @line-height-large:         1.33;
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
-@border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-base:        3px;
+@border-radius-large:       4px;
+@border-radius-small:       2px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -119,9 +124,9 @@
 //## Customizes the `.table` component with basic values, each used across all table variations.
 
 //** Padding for `<th>`s and `<td>`s.
-@table-cell-padding:            8px;
+@table-cell-padding:            6px;
 //** Padding for cells in `.table-condensed`.
-@table-condensed-cell-padding:  5px;
+@table-condensed-cell-padding:  3px;
 
 //** Default background color used for all tables.
 @table-bg:                      transparent;
@@ -336,7 +341,7 @@
 
 // Basics of a navbar
 @navbar-height:                    50px;
-@navbar-margin-bottom:             @line-height-computed;
+@navbar-margin-bottom:             0px;// @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
@@ -397,7 +402,7 @@
 //##
 
 //=== Shared nav styles
-@nav-link-padding:                          10px 15px;
+@nav-link-padding:                          5px 8px;
 @nav-link-hover-bg:                         @gray-lighter;
 
 @nav-disabled-link-color:                   @gray-light;
@@ -464,7 +469,7 @@
 //
 //##
 
-@jumbotron-padding:              30px;
+@jumbotron-padding:              15px;
 @jumbotron-color:                inherit;
 @jumbotron-bg:                   @gray-lighter;
 @jumbotron-heading-color:        inherit;
@@ -599,7 +604,7 @@
 //
 //## Define alert colors, border radius, and padding.
 
-@alert-padding:               15px;
+@alert-padding:               10px;
 @alert-border-radius:         @border-radius-base;
 @alert-link-font-weight:      bold;
 
@@ -680,8 +685,8 @@
 //##
 
 @panel-bg:                    #fff;
-@panel-body-padding:          15px;
-@panel-heading-padding:       10px 15px;
+@panel-body-padding:          8px;
+@panel-heading-padding:       5px 8px;
 @panel-footer-padding:        @panel-heading-padding;
 @panel-border-radius:         @border-radius-base;
 
@@ -847,3 +852,38 @@
 
 //** Horizontal offset for forms and lists.
 @component-offset-horizontal: 180px;
+
+
+// custom by aalex
+body {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 400;
+    line-height: 0.8em;
+}
+
+// swingster dance Wiki plugin
+
+table.swingster-score {
+    width: 100%;
+    table-layout: fixed;
+}
+table.swingster-score td {
+    vertical-align: top;
+}
+table.swingster-score, table.swingster-score td {
+    border: 1px solid #666666;
+}
+td.swingster-a { background-color: #ccffff; }
+td.swingster-b { background-color: #ffcccc; }
+td.swingster-c { background-color: #ffffcc; }
+td.swingster-d { background-color: #ccccff; }
+td.swingster-e { background-color: #ffccff; }
+td.swingster-f { background-color: #ccffcc; }
+td.swingster-empty { background-color: #cccccc; }
+td.swingster-counts { background-color: #cccccc; font-weight: bold; }
+span.swingster-title { font-weight: bold; }
+
+navbar {
+    font-weight: bold;
+}
